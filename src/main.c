@@ -50,8 +50,6 @@ int main() {
     SetConsoleOutputCP(CP_UTF8);
   #endif
 
-  printf("=== ТЕСТ: Поворот вектора X на 90° вокруг оси Z ===\n\n");
-
   printf("Ось вращения: Z(0, 0, 1)\n");
 
   Quaternion v = quaternion_create(0.0, 1.0, 0.0, 0.0);
