@@ -50,6 +50,7 @@ int main() {
     SetConsoleOutputCP(CP_UTF8);
   #endif
 
+  printf("\n\n\nВывод в консоль\n");
   printf("Ось вращения: Z(0, 0, 1)\n");
 
   Quaternion v = quaternion_create(0.0, 1.0, 0.0, 0.0);
