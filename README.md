@@ -36,31 +36,14 @@ $$v_{rotated} = q \cdot v \cdot q'$$
 
 ### Требования
 
-| Инструмент | Версия | Где скачать |
-|---|---|---|
-| CMake | ≥ 3.10 | https://cmake.org/download/ |
-| Компилятор C (GCC / Clang / MSVC) | любая с поддержкой C99 | см. ниже |
+| Инструмент | Версия |
+|---|---|
+| CMake | ≥ 3.10 |
+| Компилятор C (GCC / Clang / MSVC) | любая с поддержкой C99 |
 
-### Linux
-
-```bash
-# Сборка
-cmake -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-
-# Запуск
-./build/test_quaternion
-```
-
-### macOS
+### Linux / macOS
 
 ```bash
-# Установка зависимостей (требуется Homebrew)
-brew install cmake
-
-# Xcode Command Line Tools (если ещё не установлены)
-xcode-select --install
-
 # Сборка
 cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
