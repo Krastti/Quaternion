@@ -38,12 +38,6 @@ $$v_{rotated} = q \cdot v \cdot q'$$
 ### Linux
 
 ```bash
-# Установка зависимостей (Debian/Ubuntu)
-sudo apt update && sudo apt install -y cmake gcc
-
-# Клонирование / переход в папку проекта
-cd /path/to/project
-
 # Сборка
 cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
@@ -51,8 +45,6 @@ cmake --build build
 # Запуск
 ./build/test_quaternion
 ```
-
-> **Примечание.** На Linux разделяемая библиотека (`libquaternion.so`) собирается в `build/`. Благодаря `RPATH=$ORIGIN` исполняемый файл находит её автоматически — выставлять `LD_LIBRARY_PATH` не нужно.
 
 ### macOS
 
@@ -69,51 +61,4 @@ cmake --build build
 
 # Запуск
 ./build/test_quaternion
-```
-
-### Windows
-
-**Вариант 1 — Visual Studio (рекомендуется)**
-
-1. Установить [Visual Studio 2019/2022](https://visualstudio.microsoft.com/) с компонентом «Разработка классических приложений на C++».
-2. Установить [CMake](https://cmake.org/download/) (или использовать встроенный в Visual Studio).
-3. Открыть папку проекта в Visual Studio: `Файл → Открыть → Папку…`
-4. Visual Studio автоматически обнаружит `CMakeLists.txt` и настроит проект.
-5. Выбрать конфигурацию `Release` и нажать `Сборка → Собрать все`.
-
-**Вариант 2 — командная строка (Developer Command Prompt)**
-
-```bat
-cmake -B build -G "Visual Studio 17 2022"
-cmake --build build --config Release
-
-:: Скопировать DLL рядом с exe перед запуском
-copy build\Release\quaternion.dll build\Release\
-build\Release\test_quaternion.exe
-```
-
-**Вариант 3 — MinGW (MSYS2)**
-
-```bash
-# В терминале MSYS2 MINGW64
-pacman -S mingw-w64-x86_64-cmake mingw-w64-x86_64-gcc
-
-cmake -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-
-./build/test_quaternion.exe
-```
-
----
-
-## Структура проекта
-
-```
-.
-├── CMakeLists.txt
-└── src/
-    ├── main.c
-    └── quaternion/
-        ├── quaternion.h
-        └── quaternion.c
 ```
