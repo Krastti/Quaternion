@@ -24,6 +24,10 @@
 
 $$v_{rotated} = q \cdot v \cdot q'$$
 
+Пример вывода:
+
+<img width="338" height="191" alt="изображение" src="https://github.com/user-attachments/assets/f450acf2-a764-4ca7-83f6-9db4ea93f1c9" />
+
 ---
 
 ## Сборка проекта
